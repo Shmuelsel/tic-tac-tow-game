@@ -1,0 +1,147 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    background-image: url('chavi&shmulik/beacgroundImmage.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 0;
+    overflow: hidden;
+}
+
+#scoreboard {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 1px solid;
+}
+
+#game {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.cell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: fadeIn 1s ease-in; /* Adjust the duration (1s) as needed */
+    opacity: 1; /* Start with opacity 0 for the animation to work */
+}
+
+#controls {
+    margin-top: 20px;
+}
+
+.controls {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+#controls button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s ease-in; /* Adjust the duration (1s) as needed */
+    opacity: 1; /* Start with opacity 0 for the animation to work */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.modal-text {
+    display: none; /* Hide paragraphs by default */
+    font-size: 18px; /* Font size for the paragraph */
+    color: #000; /* Text color */
+}
+
+.show {
+    display: block; /* Show element with this class */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content img {
+    width: 50%;
+    height: auto;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+#winnerImage {
+    max-width: 90%; /* Ensure image fits within the modal */
+    max-height: 60%; /* Ensure image doesn’t get too tall */
+    border: 2px solid #000; /* Optional: Add border to image */
+    margin-bottom: 10px; /* Space between image and text */
+}
+
+.scoreboard {
+    background-color: white; /* Solid background for each letter */
+    padding: 2px; /* Adjust padding as needed */
+    border-radius: 3px; /* Optional: rounds the corners */
+    margin: 0 1px; /* Adjust spacing between letters */
+    display: inline-block;
+}
